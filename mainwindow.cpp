@@ -18,13 +18,13 @@ void MainWindow::on_pushButton_Entrar_clicked()
 {
     QString username = ui->lineEdit_user->text();
     QString password = ui->lineEdit_pass->text();
-  //  QCheckBox administrator = ui->radioButton_A->isChecked();
-  //  QCheckBox worker = ui->radioButton_O->isChecked();
+    bool administrator = ui->radioButton_A->isChecked();
+    bool worker = ui->radioButton_O->isChecked();
 
 
     //AQUI VA LA BUSQUEDA EN ARCHIVOS DE USUARIOS Y CONTRASENA VALIDOS
 
-    if(username == "admin" && password == "admin" /*&& (administrator||worker)*/)
+    if(username == "admin" && password == "admin" && (administrator||worker))
     {
         QMessageBox::information(this, "Sesion", "Sesion iniciada correctamente.\nBienvenido.");
         //hide();
