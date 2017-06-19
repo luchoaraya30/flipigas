@@ -1,18 +1,35 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    qDebug()<<"Aplicacion iniciada";
+    QString db_name;
+    db_name.append("users.sqlite");
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(db_name);
+    if(db.open())
+    {
+        qDebug()<<"Coneccion a la DB complete successssdasdqsdkjs";
+    }else
+    {
+        qDebug()<<"No se conecto a la db";
+    }
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    db.close();
+    qDebug()<<"Conexion cerrada";
 }
+
 
 void MainWindow::on_pushButton_Entrar_clicked()
 {
@@ -35,4 +52,15 @@ void MainWindow::on_pushButton_Entrar_clicked()
     {
         QMessageBox::warning(this, "Sesion", "Usuario y/o contrasena incorrectos");
     }
+}
+
+void MainWindow::on_pushButton_signin_clicked()
+{   hide();
+    sign_in = new signin(this);
+    sign_in->show();
+}
+
+void MainWindow::create_table_users()
+{
+
 }

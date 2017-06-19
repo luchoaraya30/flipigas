@@ -15,6 +15,9 @@ public:
     explicit request_form(QWidget *parent = 0);
     ~request_form();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::request_form *ui;
 };

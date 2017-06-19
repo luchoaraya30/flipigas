@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,13 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     secdialog.cpp \
-    request_form.cpp
+    request_form.cpp \
+    signin.cpp
 
 HEADERS  += mainwindow.h \
     secdialog.h \
-    classes.h \
-    request_form.h
+    request_form.h \
+    signin.h
 
 FORMS    += mainwindow.ui \
     secdialog.ui \
-    request_form.ui
+    request_form.ui \
+    signin.ui
