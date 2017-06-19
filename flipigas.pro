@@ -14,10 +14,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    secdialog.cpp
+    secdialog.cpp \
+    request_form.cpp
 
 HEADERS  += mainwindow.h \
-    secdialog.h
+    secdialog.h \
+    classes.h \
+    request_form.h
 
 FORMS    += mainwindow.ui \
-    secdialog.ui
+    secdialog.ui \
+    request_form.ui

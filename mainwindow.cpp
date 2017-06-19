@@ -27,7 +27,7 @@ void MainWindow::on_pushButton_Entrar_clicked()
     if(username == "admin" && password == "admin" && (administrator||worker))
     {
         QMessageBox::information(this, "Sesion", "Sesion iniciada correctamente.\nBienvenido.");
-        //hide();
+        hide();
         secDialog = new SecDialog(this);
         secDialog->show();
     }
