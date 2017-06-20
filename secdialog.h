@@ -1,6 +1,7 @@
 #ifndef SECDIALOG_H
 #define SECDIALOG_H
 #include "request_form.h"
+#include <QDebug>
 
 #include <QDialog>
 
@@ -13,7 +14,8 @@ class SecDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SecDialog(QWidget *parent = 0);
+    explicit SecDialog(QWidget *parent = 0, const QString username=0);
+    QString sesion;
     ~SecDialog();
 
 

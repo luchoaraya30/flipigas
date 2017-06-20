@@ -1,5 +1,6 @@
 #ifndef REQUEST_FORM_H
 #define REQUEST_FORM_H
+#include <dbmanager.h>
 
 #include <QDialog>
 
@@ -14,6 +15,7 @@ class request_form : public QDialog
 public:
     explicit request_form(QWidget *parent = 0);
     ~request_form();
+    DBManager * db;
 
 private slots:
     void on_buttonBox_accepted();

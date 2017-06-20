@@ -38,7 +38,7 @@ void MainWindow::on_pushButton_Entrar_clicked()
     {
         QMessageBox::information(this, "Sesion", "Sesion iniciada correctamente.\nBienvenido.");
         hide();
-        secDialog = new SecDialog(this);
+        secDialog = new SecDialog(this,username);
         secDialog->show();
     }
     else

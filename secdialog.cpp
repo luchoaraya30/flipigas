@@ -2,11 +2,12 @@
 #include "ui_secdialog.h"
 #include "request_form.h"
 
-SecDialog::SecDialog(QWidget *parent) :
+SecDialog::SecDialog(QWidget *parent, const QString username) :
     QDialog(parent),
     ui(new Ui::SecDialog)
 {
     ui->setupUi(this);
+    this->sesion = username;
 }
 
 SecDialog::~SecDialog()
@@ -16,6 +17,7 @@ SecDialog::~SecDialog()
 
 void SecDialog::on_goto_request_clicked()
 {
+    qDebug()<<sesion;
     req = new request_form(this);
     req->show();
 }
