@@ -4,6 +4,7 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
+#include <dbmanager.h>
 
 
 namespace Ui {
@@ -23,12 +24,9 @@ private slots:
 
     void on_buttonBox_rejected();
 
-    void create_table_users();
-
-    void insert_user();
-
 private:
     Ui::signin *ui;
+    DBManager *db;
 
 };
 

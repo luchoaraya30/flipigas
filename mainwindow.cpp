@@ -8,25 +8,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    db = new DBManager("/home/ejara/SEMINARIO/flipigas/users.db");
     qDebug()<<"Aplicacion iniciada";
-    QString db_name;
-    db_name.append("users.sqlite");
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(db_name);
-    if(db.open())
-    {
-        qDebug()<<"Coneccion a la DB complete successssdasdqsdkjs";
-    }else
-    {
-        qDebug()<<"No se conecto a la db";
-    }
 
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    db.close();
     qDebug()<<"Conexion cerrada";
 }
 

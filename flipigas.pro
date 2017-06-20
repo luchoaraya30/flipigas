@@ -16,12 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     secdialog.cpp \
     request_form.cpp \
-    signin.cpp
+    signin.cpp \
+    dbmanager.cpp
 
 HEADERS  += mainwindow.h \
     secdialog.h \
     request_form.h \
-    signin.h
+    signin.h \
+    dbmanager.h
 
 FORMS    += mainwindow.ui \
     secdialog.ui \

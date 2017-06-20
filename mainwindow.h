@@ -1,11 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QMainWindow>
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlQuery>
-#include <QtSql/QSqlError>
 #include "secdialog.h"
 #include "signin.h"
+#include "dbmanager.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,8 +16,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
-    void create_table_users();
+    DBManager *db;
 
     //metodo que hace algo
 
@@ -32,7 +29,7 @@ private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
     signin *sign_in;
-    QSqlDatabase db;
+
 };
 
 #endif // MAINWINDOW_H
