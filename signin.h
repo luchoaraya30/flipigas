@@ -1,6 +1,9 @@
 #ifndef SIGNIN_H
 #define SIGNIN_H
 #include <QDialog>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
 
 
 namespace Ui {
@@ -16,14 +19,17 @@ public:
     ~signin();
 
 private slots:
+    void on_buttonBox_accepted();
 
+    void on_buttonBox_rejected();
 
-    void on_pushButton_ok_clicked();
+    void create_table_users();
 
-    void on_pushButton_cancel_clicked();
+    void insert_user();
 
 private:
     Ui::signin *ui;
+
 };
 
 #endif // SIGNIN_H

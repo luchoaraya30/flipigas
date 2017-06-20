@@ -55,12 +55,10 @@ void MainWindow::on_pushButton_Entrar_clicked()
 }
 
 void MainWindow::on_pushButton_signin_clicked()
-{   hide();
-    sign_in = new signin(this);
-    sign_in->show();
-}
-
-void MainWindow::create_table_users()
 {
-
+    sign_in = new signin(this);
+    sign_in->setModal(true);
+    sign_in->setVisible(true);
 }
+
+
