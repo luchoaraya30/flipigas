@@ -34,12 +34,16 @@ void signin::on_buttonBox_accepted()
         temp_admin="operario";
     }
 
-
+    if(ui->lineEdit_pass->text() == ui->lineEdit_rpass->text())
+    {
     this->db->addPerson(ui->lineEdit_user->text(),
                         ui->lineEdit_pass->text(),
                         ui->lineEdit_mail->text(),
                         temp_admin
                 );
+    }else{
+        QMessageBox::warning(this, "Error", "Constraseñas no coinciden. Reintentar");
+    }
     close();
 }
 

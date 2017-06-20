@@ -14,7 +14,7 @@ public:
                    const QString& mail,
                    const QString& type);
     bool removePerson(const QString& user);
-    bool personExists(const QString& user);
+    bool personExists(const QString &user, const QString &pass, const QString &admin);
 private:
     QSqlDatabase m_db;
 };

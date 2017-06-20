@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <dbmanager.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,11 +27,14 @@ void MainWindow::on_pushButton_Entrar_clicked()
     QString password = ui->lineEdit_pass->text();
     bool administrator = ui->radioButton_A->isChecked();
     bool worker = ui->radioButton_O->isChecked();
-
+    QString temp_admin;
+    (administrator)?temp_admin="administrador":temp_admin="operario";
 
     //AQUI VA LA BUSQUEDA EN ARCHIVOS DE USUARIOS Y CONTRASENA VALIDOS
-
-    if(username == "admin" && password == "admin" && (administrator||worker))
+    qDebug()<<username+"---pushed";
+    qDebug()<<password+"---pushed";
+    qDebug()<<temp_admin+"---pushed";
+    if(db->personExists(username, password, temp_admin))
     {
         QMessageBox::information(this, "Sesion", "Sesion iniciada correctamente.\nBienvenido.");
         hide();
